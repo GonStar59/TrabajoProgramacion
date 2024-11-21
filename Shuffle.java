@@ -1,6 +1,6 @@
 public class Shuffle{
   public static void main(String[] args){
-     int[][] mano=new int[7][2];
+     int[][] mano=new int[2][2];
      int[][] mesa=new int[5][2];
      int[][] baraja = {
             {1, 4}, {1, 1}, {1, 2}, {1, 3},  // As
@@ -19,10 +19,14 @@ public class Shuffle{
         };
      baraja=barajar(baraja).clone();
      int posicion=0;
-     mano[0][0]=baraja[posicion][0];//saca una carta de la baraja u se la da a la mano
-     mano[0][1]=baraja[posicion][1];
+     mano[posicion][0]=baraja[posicion][0];//saca una carta de la baraja u se la da a la mano
+     mano[posicion][1]=baraja[posicion][1];
+     posicion++;//añade 1 al contador para sacar despues la siguiente carta
+     mano[posicion][0]=baraja[posicion][0];//saca una carta de la baraja u se la da a la mano
+     mano[posicion][1]=baraja[posicion][1];
      posicion++;//añade 1 al contador para sacar despues la siguiente carta
      mirar(baraja);
+     System.out.println("Te daria a elegir ");
      System.out.println("Mano: ");
      mirar(mano);
         
