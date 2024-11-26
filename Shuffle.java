@@ -1,6 +1,11 @@
 public class Shuffle{
   public static void main(String[] args){
-     int[][] mano=new int[2][2];
+    int n=6;
+    int[] posicion=new int[n]; // 0 para la general 1 para la mesa y mas de 1 para las manos
+     int[][] mano1=new int[2][2];
+     int[][] mano2=new int[2][2];
+     int[][] mano3=new int[2][2];
+     int[][] mano4=new int[2][2];
      int[][] mesa=new int[5][2];
      int[][] baraja = {
             {1, 4}, {1, 1}, {1, 2}, {1, 3},  // As
