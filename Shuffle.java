@@ -74,7 +74,7 @@ public class Shuffle{
       System.out.println("Te daria a elegir "); 
      //mirar(mano);
         dibujar(mesa);
-        System.out.println("Mano: ");
+        System.out.println("Mano: "+baraja.length[]);
         dibujar(mano1);
 
         System.out.println("Te daria a elegir "); 
@@ -169,4 +169,32 @@ public class Shuffle{
     default : System.out.print("  ");break;
    }
   }
+  public static int[] puntuar(int[][] mano,int[][] mesa){
+    int[] puntos=new int[2];
+    int[][] conj=new int[7][2];
+    conj=
+
+
+    return puntos;
+  }
+
+  public static int[][] juntar(int[][] array1,int[][] array2){
+    int[][] arrayGrande = new int[array1.length + array2.length][array1.length[]];
+
+  }
+
+  public static boolean color(int[][] mano){//Comprueba si hay color
+    int i=0,iguales=0;
+    boolean color=false;
+    while(!color&&i<7){
+      for(int j=0;j<7;j++){
+        if(mano[i][1]==mano[j][1]){iguales++;}
+
+      }
+      if(iguales>=5){color=true;}
+      i++;
+    }
+    return color;
+  }
+
 }
