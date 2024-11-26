@@ -18,17 +18,62 @@ public class Shuffle{
             {13, 4}, {13, 1}, {13, 2}, {13, 3}   // K
         };
      baraja=barajar(baraja).clone();
-     int posicion=0;
-     mano[posicion][0]=baraja[posicion][0];//saca una carta de la baraja u se la da a la mano
-     mano[posicion][1]=baraja[posicion][1];
-     posicion++;//añade 1 al contador para sacar despues la siguiente carta
-     mano[posicion][0]=baraja[posicion][0];//saca una carta de la baraja u se la da a la mano
-     mano[posicion][1]=baraja[posicion][1];
-     posicion++;//añade 1 al contador para sacar despues la siguiente carta
+     
+     mano1[posicion[2]][0]=baraja[posicion[0]][0];//saca una carta de la baraja u se la da a la mano
+     mano1[posicion[2]][1]=baraja[posicion[0]][1];
+     posicion[0]++;//añade 1 al contador para sacar despues la siguiente carta
+     posicion[2]++;
+     mano1[posicion[2]][0]=baraja[posicion[0]][0];//saca una carta de la baraja u se la da a la mano
+     mano1[posicion[2]][1]=baraja[posicion[0]][1];
+     posicion[0]++;//añade 1 al contador para sacar despues la siguiente carta
+     posicion[2]++;
      mirar(baraja);
-     System.out.println("Te daria a elegir ");
-     System.out.println("Mano: ");
-     mirar(mano);
+     System.out.println("Te daria a elegir "); 
+     //mirar(mano);
+        dibujar(mesa);
+        System.out.println("Mano: ");
+        dibujar(mano1);
+
+        mesa[posicion[1]][0]=baraja[posicion[0]][0];//saca una carta de la baraja u se la da a la mano
+        mesa[posicion[1]][1]=baraja[posicion[0]][1];
+        posicion[0]++;//añade 1 al contador para sacar despues la siguiente carta
+        posicion[1]++; 
+        mesa[posicion[1]][0]=baraja[posicion[0]][0];//saca una carta de la baraja u se la da a la mano
+        mesa[posicion[1]][1]=baraja[posicion[0]][1];
+        posicion[0]++;//añade 1 al contador para sacar despues la siguiente carta
+        posicion[1]++; 
+        mesa[posicion[1]][0]=baraja[posicion[0]][0];//saca una carta de la baraja u se la da a la mano
+        mesa[posicion[1]][1]=baraja[posicion[0]][1];
+        posicion[0]++;//añade 1 al contador para sacar despues la siguiente carta
+        posicion[1]++;       
+      System.out.println("Te daria a elegir "); 
+     //mirar(mano);
+        dibujar(mesa);
+        System.out.println("Mano: ");
+        dibujar(mano1);
+
+        mesa[posicion[1]][0]=baraja[posicion[0]][0];//saca una carta de la baraja u se la da a la mano
+        mesa[posicion[1]][1]=baraja[posicion[0]][1];
+        posicion[0]++;//añade 1 al contador para sacar despues la siguiente carta
+        posicion[1]++;       
+      System.out.println("Te daria a elegir "); 
+     //mirar(mano);
+        dibujar(mesa);
+        System.out.println("Mano: ");
+        dibujar(mano1);
+
+        mesa[posicion[1]][0]=baraja[posicion[0]][0];//saca una carta de la baraja u se la da a la mano
+        mesa[posicion[1]][1]=baraja[posicion[0]][1];
+        posicion[0]++;//añade 1 al contador para sacar despues la siguiente carta
+        posicion[1]++;       
+      System.out.println("Te daria a elegir "); 
+     //mirar(mano);
+        dibujar(mesa);
+        System.out.println("Mano: ");
+        dibujar(mano1);
+
+        System.out.println("Te daria a elegir "); 
+        System.out.println("Te daria el gandor"); 
         
   }
   
@@ -41,7 +86,7 @@ public class Shuffle{
         }
   
   }
-  public static int[][] barajar(int[][] baraja){// Barajar la baraja 
+  public static int[][] barajar(int[][] baraja){
     int cambio,cambio2,n1,m1;
     for(int i=0;i<1000;i++){//intercambiara dos columnas alatorias del array
       n1=(int)(Math.random()*52);  //crea un numero aleatorio que sera una posicion del array baraja
@@ -59,6 +104,64 @@ public class Shuffle{
   public static int repartir(int[][] baraja,int contador){
     return baraja[contador][0]; 
   }
+  
+  public static void dibujar(int[][] mano){
+    System.out.println("\n\n");
+    int alt=9, lo=5;
+    int n=mano.length;
+    for(int j=0;j<=alt;j++){
+      for(int i=0;i<(lo*n);i++){
+        if(j==0||j==alt){ 
+          if(i%5==0){
+            System.out.print("\t\t***");
+          }else{
+            System.out.print("***");
+          }  
+        }else{
+          if(i%5==0){
+            System.out.print("\t\t*  ");
+          }else if (i%5==4) {
+            System.out.print("  *"); 
+          }else if((i%5==1&&j==1)||(i%5==3&&j==8)){
+            dibujarAux(mano, i/5);
+          
+          }else{
+            System.out.print("   ");
+          }
+        }
+      }
+      System.out.println("");
+    }
+    System.out.println("\n\n");
+  }
+  public static void dibujarAux(int[][] mano,int pos){
+    String rojo = "\u001B[31m";
+    String limpiar = "\u001B[0m";
+   switch (mano[pos][0]) {
+    case 1 : System.out.print("1 ");break;
+    case 2 : System.out.print("2 ");break;
+    case 3 : System.out.print("3 ");break;
+    case 4 : System.out.print("4 ");break;
+    case 5 : System.out.print("5 ");break;
+    case 6 : System.out.print("6 ");break;
+    case 7 : System.out.print("7 ");break;
+    case 8 : System.out.print("8 ");break;
+    case 9 : System.out.print("9 ");break;
+    case 10 : System.out.print("10");break;
+    case 11 : System.out.print("J ");break;
+    case 12 : System.out.print("Q ");break;
+    case 13 : System.out.print("K ");break;
+  
+    default : System.out.print(" ");break;
+   }
+
+   switch (mano[pos][1]) {
+    case 1 : System.out.print(rojo+"H"+limpiar);break;
+    case 2 : System.out.print(rojo+"D"+limpiar);break;
+    case 3 : System.out.print("P");break;
+    case 4 : System.out.print("T");break;
+   
+    default : System.out.print("  ");break;
+   }
+  }
 }
-
-
